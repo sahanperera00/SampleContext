@@ -6,19 +6,22 @@ import User from "./pages/User";
 import BookDetail from "./pages/BookDetail";
 import UserDetail from "./pages/UserDetail";
 import BookContextProvider from "./context/BookContext";
+import UserContextProvider from "./context/UserContext";
 
 function App() {
   return (
     <>
-      <BookContextProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/book/:id" element={<BookDetail />} />
-          <Route path="/user/:id" element={<UserDetail />} />
-          <Route path="/book" element={<Book />} />
-        </Routes>
-      </BookContextProvider>
+      <UserContextProvider>
+        <BookContextProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/user" element={<User />} />
+            <Route path="/book/:id" element={<BookDetail />} />
+            <Route path="/user/:id" element={<UserDetail />} />
+            <Route path="/book" element={<Book />} />
+          </Routes>
+        </BookContextProvider>
+      </UserContextProvider>
     </>
   );
 }

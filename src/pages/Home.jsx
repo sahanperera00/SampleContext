@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import Navbar from "../components/Navbar";
 import { BookContext } from "../context/BookContext";
+import { UserContext } from "../context/UserContext";
 import { Link } from "react-router-dom";
 
 export default function Home() {
   const { bookList } = useContext(BookContext);
+  const { userList } = useContext(UserContext);
 
   return (
     <div>
@@ -31,11 +33,11 @@ export default function Home() {
         <table>
           <thead></thead>
           <tbody>
-            {/* {users.map((user) => (
+            {userList.map((user) => (
               <tr key={user.id}>
                 <td>{user.name}</td>
               </tr>
-            ))} */}
+            ))}
           </tbody>
         </table>
       </div>
