@@ -10,14 +10,12 @@ import BookContextProvider from "./context/BookContext";
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/user" element={<User />} />
-        <Route path="/book/:id" element={<BookDetail />} />
-        <Route path="/user/:id" element={<UserDetail />} />
-      </Routes>
       <BookContextProvider>
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/book/:id" element={<BookDetail />} />
+          <Route path="/user/:id" element={<UserDetail />} />
           <Route path="/book" element={<Book />} />
         </Routes>
       </BookContextProvider>
